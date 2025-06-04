@@ -1,9 +1,11 @@
 import requests
-
+from dotenv import load_dotenv
+load_dotenv()
+flic_token=os.getenv("Flic_Token")
 def get_socialverse_posts():
     url = "https://api.socialverseapp.com/posts/summary/get?page=1&page_size=1000"
     headers = {
-        "Flic-Token": "flic_b1c6b09d98e2d4884f61b9b3131dbb27a6af84788e4a25db067a22008ea9cce5"
+        "Flic-Token": flic_token
     }
 
     response = requests.get(url, headers=headers)
